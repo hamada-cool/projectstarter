@@ -6,13 +6,13 @@ from .doctor import run_doctor
 
 def main():
     parser = argparse.ArgumentParser(
-        description="ProjectStarter - Create projects quickly"
+        description="ProjectStarter-cli - Create projects quickly"
     )
 
     parser.add_argument(
         "--version",
         action="version",
-        version="ProjectStarter 0.1.0"
+        version="ProjectStarter-cli 0.1.1"
     )
 
     subparsers = parser.add_subparsers(
@@ -53,7 +53,7 @@ def main():
     # doctor command
     subparsers.add_parser(
         "doctor",
-        help="Check ProjectStarter installation"
+        help="Check ProjectStarter-cli installation"
     )
 
     info_parser.add_argument(

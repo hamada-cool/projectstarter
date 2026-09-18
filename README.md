@@ -1,6 +1,6 @@
-# ProjectStarter 🚀
+# projectstarter-cli 🚀
 
-ProjectStarter is a Python CLI tool created by **Mohamed Ali** for quickly creating ready-to-use project structures.
+projectstarter-cli is a Python CLI tool created by **Mohamed Ali Ismail Jami** for quickly creating ready-to-use project structures.
 
 It helps developers avoid manually creating folders, files, virtual environments, installing framework dependencies, and preparing basic project documentation.
 
@@ -18,7 +18,7 @@ It helps developers avoid manually creating folders, files, virtual environments
 - 📝 Automatically generate a README for generated projects
 - 📋 List supported project types
 - ℹ️ Show information about each project type
-- 🩺 Check the ProjectStarter installation with `doctor`
+- 🩺 Check the projectstarter-cli installation with `doctor`
 - 🧪 Includes automated tests
 
 ---
@@ -38,10 +38,10 @@ It helps developers avoid manually creating folders, files, virtual environments
 
 # 📦 Installation
 
-Install ProjectStarter from PyPI:
+Install projectstarter-cli from PyPI:
 
 ```bash
-pip install projectstarter
+pip install projectstarter-cli
 ```
 
 Check that it is installed:
@@ -68,7 +68,7 @@ Run:
 projectstarter create
 ```
 
-ProjectStarter will show the available project types:
+projectstarter-cli will show the available project types:
 
 ```text
 Choose a project type:
@@ -88,7 +88,7 @@ Enter your choice: 2
 Enter project name: myproject
 ```
 
-ProjectStarter will create the project automatically.
+projectstarter-cli will create the project automatically.
 
 ---
 
@@ -135,7 +135,7 @@ Create a Django project:
 projectstarter create django myproject
 ```
 
-ProjectStarter automatically:
+projectstarter-cli automatically:
 
 1. Creates the project directory.
 2. Creates `.venv`.
@@ -201,7 +201,7 @@ Create a Flask project:
 projectstarter create flask myproject
 ```
 
-ProjectStarter automatically:
+projectstarter-cli automatically:
 
 1. Creates the project directory.
 2. Creates `.venv`.
@@ -267,7 +267,7 @@ Create a FastAPI project:
 projectstarter create fastapi myproject
 ```
 
-ProjectStarter automatically:
+projectstarter-cli automatically:
 
 1. Creates the project directory.
 2. Creates `.venv`.
@@ -385,7 +385,7 @@ projectstarter info fastapi
 
 # 🩺 Doctor
 
-ProjectStarter includes a built-in diagnostic command:
+projectstarter-cli includes a built-in diagnostic command:
 
 ```bash
 projectstarter doctor
@@ -401,7 +401,7 @@ It checks:
 Example:
 
 ```text
-ProjectStarter Doctor
+projectstarter-cli Doctor
 ──────────────────────────────
 ✓ Python
   Version: 3.x.x
@@ -419,9 +419,9 @@ Everything looks good! ✓
 
 ---
 
-# 🧪 Testing ProjectStarter
+# 🧪 Testing projectstarter-cli
 
-ProjectStarter uses `pytest` for automated testing.
+projectstarter-cli uses `pytest` for automated testing.
 
 Install pytest for development:
 
@@ -450,9 +450,9 @@ The test suite covers:
 
 ---
 
-# 🏗️ ProjectStarter Development Structure
+# 🏗️ projectstarter-cli Development Structure
 
-The ProjectStarter source code is organized as follows:
+The projectstarter-cli source code is organized as follows:
 
 ```text
 projectstarter/
@@ -524,7 +524,7 @@ Contains the automated test suite.
 
 # ➕ Adding a New Generator
 
-ProjectStarter is designed so that new project types can be added to the generator system.
+projectstarter-cli is designed so that new project types can be added to the generator system.
 
 A new generator generally needs:
 
@@ -541,7 +541,7 @@ This keeps the CLI organized and makes the tool easier to extend.
 
 # 🔐 Project Name Rules
 
-ProjectStarter validates project names before creating projects.
+projectstarter-cli validates project names before creating projects.
 
 Valid examples:
 
@@ -565,9 +565,9 @@ Project names must use letters, numbers, and underscores and must not start with
 
 # 👨‍💻 Author
 
-**Mohamed Ali**
+**Mohamed Ali Ismail Jami**
 
-ProjectStarter was created and is maintained by Mohamed Ali.
+projectstarter-cli was created and is maintained by Mohamed Ali Ismail Jami.
 
 ## 📞 Contact
 
@@ -577,9 +577,9 @@ For questions, suggestions, bug reports, or contributions, contact the project m
 - Project Repository: https://github.com/hamada-cool/projectstarter
 - Bug Reports / Issues: https://github.com/hamada-cool/projectstarter/issues
 - Email: `mohamedali32947@gmail.com`
-- Phone / WhatsApp: `+918341391506` & `+249919532947`
+- Phone / WhatsApp: `+918341391506` and `+249919532947`
 
-You can also open a GitHub Issue if you find a bug or have an idea for improving ProjectStarter.
+You can also open a GitHub Issue if you find a bug or have an idea for improving projectstarter-cli.
 
 ---
 
@@ -605,7 +605,7 @@ python -m pytest
 
 # 📄 License
 
-ProjectStarter is licensed under the **MIT License**.
+projectstarter-cli is licensed under the **MIT License**.
 
 See the `LICENSE` file for the complete license text.
 
@@ -613,7 +613,7 @@ See the `LICENSE` file for the complete license text.
 
 # 🎯 Project Status
 
-ProjectStarter currently supports:
+projectstarter-cli currently supports:
 
 - Python
 - Django
@@ -626,7 +626,7 @@ The project is under active development, and more generators and features may be
 
 ## ⭐ Support the Project
 
-If you find ProjectStarter useful, you can support the project by:
+If you find projectstarter-cli useful, you can support the project by:
 
 - ⭐ Starring the GitHub repository
 - 🐛 Reporting bugs
@@ -636,6 +636,6 @@ If you find ProjectStarter useful, you can support the project by:
 
 ---
 
-**ProjectStarter — Start your next Python project faster. 🚀**
+**projectstarter-cli — Start your next Python project faster. 🚀**
 
-Created by **Mohamed Ali**.
+Created by **Mohamed Ali Ismail Jami**.

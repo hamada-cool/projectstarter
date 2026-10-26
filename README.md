@@ -1,96 +1,105 @@
-projectstarter-cli 🚀
+# projectstarter-cli 🚀
 
-""PyPI version" (https://img.shields.io/pypi/v/projectstarter-cli)" (https://pypi.org/project/projectstarter-cli/)
-""Python Versions" (https://img.shields.io/pypi/pyversions/projectstarter-cli)" (https://pypi.org/project/projectstarter-cli/)
-""Tests" (https://github.com/hamada-cool/projectstarter/actions/workflows/python-tests.yml/badge.svg)" (https://github.com/hamada-cool/projectstarter/actions/workflows/python-tests.yml)
+[![PyPI version](https://img.shields.io/pypi/v/projectstarter-cli)](https://pypi.org/project/projectstarter-cli/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/projectstarter-cli)](https://pypi.org/project/projectstarter-cli/)
+[![Tests](https://github.com/hamada-cool/projectstarter/actions/workflows/python-tests.yml/badge.svg)](https://github.com/hamada-cool/projectstarter/actions/workflows/python-tests.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/hamada-cool/projectstarter/blob/main/LICENSE)
 
-projectstarter-cli is a Python CLI tool created by Mohamed Ali Ismail Jami for quickly creating ready-to-use project structures.
+**Create ready-to-use Python projects in seconds.**
 
-It helps developers avoid manually creating folders, files, virtual environments, installing framework dependencies, and preparing basic project documentation.
+`projectstarter-cli` is a Python command-line tool created by **Mohamed Ali Ismail Jami** to simplify project setup. It automatically generates project structures and, for supported web frameworks, creates virtual environments and installs the required dependencies.
 
-✨ Features
+Spend less time configuring projects and more time building applications.
 
-- 🐍 Create basic Python projects
-- 🌐 Create Django projects
-- ⚡ Create Flask projects
-- 🚀 Create FastAPI projects
-- 📦 Automatically create ".venv" for Django, Flask, and FastAPI projects
-- ⬆️ Automatically upgrade "pip"
-- 🔧 Automatically install required framework packages
-- 📄 Automatically generate "requirements.txt"
-- 🚫 Automatically generate ".gitignore"
-- 📝 Automatically generate a README for generated projects
-- 📋 List supported project types
-- ℹ️ Show information about each project type
-- 🩺 Check the projectstarter-cli installation with "doctor"
-- 🧪 Includes automated tests
+## ✨ Features
 
----
+- 🐍 Generate basic Python projects.
+- 🌐 Generate Django projects.
+- ⚡ Generate Flask projects.
+- 🚀 Generate FastAPI projects.
+- 📦 Automatically create `.venv` for Django, Flask, and FastAPI projects.
+- ⬆️ Automatically upgrade `pip` in generated framework environments.
+- 🔧 Install the required framework dependencies.
+- 📄 Generate `requirements.txt`.
+- 🚫 Generate `.gitignore`.
+- 📝 Generate a project-specific `README.md`.
+- 📋 List supported project types.
+- ℹ️ Display information about each generator.
+- 🩺 Diagnose the installation using the `doctor` command.
+- 🧪 Run automated tests with `pytest`.
 
-📋 Supported Project Types
+## 📋 Supported Project Types
 
-Project Type| Virtual Environment| Automatic Dependency Installation| Run Command
-Python| No| No| "python src/<project_name>/main.py"
-Django| Yes| Yes| "python manage.py runserver"
-Flask| Yes| Yes| "python run.py"
-FastAPI| Yes| Yes| "uvicorn app.main:app --reload"
+| Project Type | Virtual Environment | Automatic Dependency Installation | Run Command |
+|---|---|---|---|
+| Python | No | No | `python src/<project_name>/main.py` |
+| Django | Yes | Yes | `python manage.py runserver` |
+| Flask | Yes | Yes | `python run.py` |
+| FastAPI | Yes | Yes | `uvicorn app.main:app --reload` |
 
-«The basic Python generator creates the project structure directly. Django, Flask, and FastAPI projects receive their own ".venv" and framework dependencies automatically.»
+> **Note:** The basic Python generator creates the project structure directly. Django, Flask, and FastAPI generators create their own virtual environments and install their framework dependencies.
 
----
+## 📦 Installation
 
-📦 Installation
+Install `projectstarter-cli` from PyPI:
 
-Install projectstarter-cli from PyPI:
+```bash
+python -m pip install projectstarter-cli
+```
 
-pip install projectstarter-cli
+Verify the installation:
 
-Check that it is installed:
-
+```bash
 projectstarter --version
+```
 
-Show the available commands:
+Display the available commands:
 
+```bash
 projectstarter --help
+```
 
----
+## 🚀 Usage
 
-🚀 Usage
-
-1. Create a project interactively
+### 1. Create a Project Interactively
 
 Run:
 
+```bash
 projectstarter create
+```
 
-projectstarter-cli will show the available project types:
+Choose a project type when prompted:
 
+```text
 Choose a project type:
 
 1. python
 2. django
 3. flask
 4. fastapi
+```
 
-Then enter the number of the project type and the project name.
+Enter your choice and project name:
 
-Example:
-
+```text
 Enter your choice: 2
 Enter project name: myproject
+```
 
-projectstarter-cli will create the project automatically.
+The CLI generates the selected project automatically.
 
----
+### 2. Create a Python Project
 
-2. Create a Python project
+Generate a basic Python project:
 
-Run:
-
+```bash
 projectstarter create python myproject
+```
 
-The generated structure is:
+#### Generated Structure
 
+```text
 myproject/
 ├── src/
 │   └── myproject/
@@ -101,36 +110,40 @@ myproject/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+```
 
-Run the Python project
+#### Run the Project
 
-Windows:
+On Windows, macOS, or Linux:
 
+```bash
 python src/myproject/main.py
+```
 
-The generated application contains a simple "main()" function.
+The generated application includes a simple `main()` function.
 
----
-
-🌐 Django
+## 🌐 Django
 
 Create a Django project:
 
+```bash
 projectstarter create django myproject
+```
 
-projectstarter-cli automatically:
+The generator automatically:
 
 1. Creates the project directory.
-2. Creates ".venv".
-3. Upgrades "pip".
+2. Creates a `.venv` virtual environment.
+3. Upgrades `pip`.
 4. Installs Django.
-5. Creates the Django project using the "config" package.
-6. Creates "requirements.txt".
-7. Creates ".gitignore".
-8. Creates a project README.
+5. Creates the Django project using the `config` package.
+6. Generates `requirements.txt`.
+7. Generates `.gitignore`.
+8. Generates a project-specific README.
 
-The main structure is:
+### Generated Structure
 
+```text
 myproject/
 ├── .venv/
 ├── config/
@@ -143,50 +156,63 @@ myproject/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
-Activate the virtual environment
+### Activate the Virtual Environment
 
-Windows:
+**Windows (Command Prompt):**
 
+```bat
 cd myproject
 .venv\Scripts\activate
+```
 
-macOS/Linux:
+**Windows (PowerShell):**
 
+```powershell
+cd myproject
+.\.venv\Scripts\Activate.ps1
+```
+
+**macOS/Linux:**
+
+```bash
 cd myproject
 source .venv/bin/activate
+```
 
-Run Django
+### Run Django
 
+```bash
 python manage.py runserver
+```
 
-Open:
+Open the development server:
 
 http://127.0.0.1:8000/
 
----
-
-⚡ Flask
+## ⚡ Flask
 
 Create a Flask project:
 
+```bash
 projectstarter create flask myproject
+```
 
-projectstarter-cli automatically:
+The generator automatically:
 
-1. Creates the project directory.
-2. Creates ".venv".
-3. Upgrades "pip".
-4. Installs Flask.
-5. Creates the "app" package.
-6. Creates "templates" and "static" directories.
-7. Creates "run.py".
-8. Creates "requirements.txt".
-9. Creates ".gitignore".
-10. Creates a project README.
+1. Creates the project directory and `.venv`.
+2. Upgrades `pip`.
+3. Installs Flask.
+4. Creates the `app` package.
+5. Creates the `templates/` and `static/` directories.
+6. Creates `run.py`.
+7. Generates `requirements.txt`.
+8. Generates `.gitignore` and a project README.
 
-The generated structure is:
+### Generated Structure
 
+```text
 myproject/
 ├── .venv/
 ├── app/
@@ -197,50 +223,56 @@ myproject/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
-Activate the virtual environment
+### Activate the Virtual Environment
 
-Windows:
+**Windows:**
 
+```bat
 cd myproject
 .venv\Scripts\activate
+```
 
-macOS/Linux:
+**macOS/Linux:**
 
+```bash
 cd myproject
 source .venv/bin/activate
+```
 
-Run Flask
+### Run Flask
 
+```bash
 python run.py
+```
 
-Open:
+Open the development server:
 
 http://127.0.0.1:5000/
 
----
-
-🚀 FastAPI
+## 🚀 FastAPI
 
 Create a FastAPI project:
 
+```bash
 projectstarter create fastapi myproject
+```
 
-projectstarter-cli automatically:
+The generator automatically:
 
-1. Creates the project directory.
-2. Creates ".venv".
-3. Upgrades "pip".
-4. Installs FastAPI.
-5. Installs Uvicorn.
-6. Creates the "app" package.
-7. Creates "app/main.py".
-8. Creates "requirements.txt".
-9. Creates ".gitignore".
-10. Creates a project README.
+1. Creates the project directory and `.venv`.
+2. Upgrades `pip`.
+3. Installs FastAPI.
+4. Installs Uvicorn.
+5. Creates the `app` package.
+6. Creates `app/main.py` and `app/__init__.py`.
+7. Generates `requirements.txt`.
+8. Generates `.gitignore` and a project README.
 
-The generated structure is:
+### Generated Structure
 
+```text
 myproject/
 ├── .venv/
 ├── app/
@@ -249,60 +281,68 @@ myproject/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
-Activate the virtual environment
+### Activate the Virtual Environment
 
-Windows:
+**Windows:**
 
+```bat
 cd myproject
 .venv\Scripts\activate
+```
 
-macOS/Linux:
+**macOS/Linux:**
 
+```bash
 cd myproject
 source .venv/bin/activate
+```
 
-Run FastAPI
+### Run FastAPI
 
+```bash
 uvicorn app.main:app --reload
+```
 
-API:
+Open the API:
 
 http://127.0.0.1:8000/
 
-Swagger documentation:
+Explore the interactive API documentation:
 
 http://127.0.0.1:8000/docs
 
----
+## 📋 List Project Types
 
-📋 List Project Types
+Display all supported project generators:
 
-To see all available generators:
-
+```bash
 projectstarter list
-
-Example:
-
-Available project types:
-
-  python
-  django
-  flask
-  fastapi
-
----
-
-ℹ️ Project Information
-
-Use the "info" command to see information about a generator.
-
-Example:
-
-projectstarter info django
+```
 
 Example output:
 
+```text
+Available project types:
+
+python
+django
+flask
+fastapi
+```
+
+## ℹ️ Project Information
+
+Use the `info` command to learn about a generator:
+
+```bash
+projectstarter info django
+```
+
+Example output:
+
+```text
 Django
 ──────────────────────────────
 Description: Python web framework
@@ -311,30 +351,34 @@ Automatic installation: Yes
 
 Run:
     python manage.py runserver
+```
 
-You can also check other project types:
+Get information about other generators:
 
+```bash
 projectstarter info python
 projectstarter info flask
 projectstarter info fastapi
+```
 
----
+## 🩺 Doctor
 
-🩺 Doctor
+Use the built-in diagnostic command to check your installation:
 
-projectstarter-cli includes a built-in diagnostic command:
-
+```bash
 projectstarter doctor
+```
 
-It checks:
+The diagnostic checks:
 
-- Python
-- Project registry
-- Available generators
-- Project information
+- Python availability and version.
+- Project generator registry.
+- Available generators.
+- Project information for supported generators.
 
-Example:
+Example output:
 
+```text
 projectstarter-cli Doctor
 ──────────────────────────────
 ✓ Python
@@ -349,49 +393,56 @@ projectstarter-cli Doctor
   All project information is available.
 
 Everything looks good! ✓
+```
 
----
+*Actual output may vary depending on your Python version and installation.*
 
-🧪 Testing projectstarter-cli
+## 🧪 Testing
 
-projectstarter-cli uses "pytest" for automated testing.
+`projectstarter-cli` uses `pytest` for automated testing.
 
-Install pytest for development:
+### Install pytest
 
+```bash
 python -m pip install pytest
+```
 
-Run all tests:
+### Run the Tests
 
+From the repository root:
+
+```bash
 python -m pytest
+```
 
 The test suite covers:
 
-- Project name validation
-- Generator registry
-- Project information
-- Python project generation
-- Django project generation
-- Flask project generation
-- FastAPI project generation
-- CLI commands
-- Interactive project creation
-- Doctor command
+- Project name validation.
+- Generator registry.
+- Project information.
+- Python project generation.
+- Django project generation.
+- Flask project generation.
+- FastAPI project generation.
+- CLI commands.
+- Interactive project creation.
+- Doctor diagnostics.
 
-GitHub Actions runs automated tests on Python 3.13 and 3.14.
+### Continuous Integration
 
-Workflow: https://github.com/hamada-cool/projectstarter/actions/workflows/python-tests.yml
+GitHub Actions runs the automated tests against Python 3.13 and 3.14.
 
----
+[View the GitHub Actions workflow](https://github.com/hamada-cool/projectstarter/actions/workflows/python-tests.yml)
 
-🏗️ projectstarter-cli Development Structure
+## 🏗️ Development Structure
 
-The projectstarter-cli source code is organized as follows:
+The repository is organized as follows:
 
+```text
 projectstarter/
 ├── .github/
 │   └── workflows/
 │       └── python-tests.yml
-│
 ├── projectstarter/
 │   ├── __init__.py
 │   ├── cli.py
@@ -399,172 +450,134 @@ projectstarter/
 │   ├── generator.py
 │   ├── registry.py
 │   └── utils.py
-│
 ├── templates/
 │   └── python/
 │       └── main.py
-│
 ├── tests/
 │   ├── test_cli.py
 │   ├── test_generator.py
 │   ├── test_registry.py
 │   └── test_utils.py
-│
 ├── README.md
 ├── LICENSE
 └── pyproject.toml
+```
 
-Main Components
+### Main Components
 
-"cli.py"
+| File | Responsibility |
+|---|---|
+| `cli.py` | Implements CLI commands such as `create`, `list`, `info`, `doctor`, and `--version`. |
+| `generator.py` | Implements project generation, virtual environment creation, and dependency installation. |
+| `registry.py` | Registers project generators and stores project information. |
+| `utils.py` | Provides utility functions, including project-name validation. |
+| `doctor.py` | Implements installation diagnostics. |
+| `templates/` | Stores project templates. |
+| `tests/` | Contains the automated test suite. |
 
-Handles the command-line interface and commands such as:
+## ➕ Adding a New Generator
 
-create
-list
-info
-doctor
---version
+The project is designed to support additional generators.
 
-"generator.py"
+To add a new project type:
 
-Contains the project generation logic for:
+1. Implement its generation logic in `generator.py`.
+2. Register the generator in `registry.py`.
+3. Add its metadata to `PROJECT_INFO`.
+4. Add generator tests in `tests/test_generator.py`.
+5. Add CLI tests where necessary.
+6. Update the documentation in `README.md`.
 
-- Python
-- Django
-- Flask
-- FastAPI
+Keep the implementation, registry, project information, tests, and documentation synchronized.
 
-It also handles virtual environment creation and dependency installation for supported frameworks.
+## 🔐 Project Name Rules
 
-"registry.py"
+`projectstarter-cli` validates project names before generating projects.
 
-Contains the registered project generators and project information.
+**Valid examples:**
 
-"utils.py"
-
-Contains utility functions such as project-name validation.
-
-"doctor.py"
-
-Provides the "projectstarter doctor" diagnostic command.
-
-"tests/"
-
-Contains the automated test suite.
-
----
-
-➕ Adding a New Generator
-
-projectstarter-cli is designed so that new project types can be added to the generator system.
-
-A new generator generally needs:
-
-1. A generator function in "generator.py".
-2. Registration in "registry.py".
-3. Project information in "PROJECT_INFO".
-4. Tests in "tests/test_generator.py".
-5. CLI tests when necessary.
-6. Documentation in this README.
-
-This keeps the CLI organized and makes the tool easier to extend.
-
----
-
-🔐 Project Name Rules
-
-projectstarter-cli validates project names before creating projects.
-
-Valid examples:
-
+```text
 myproject
 my_project
 project123
+```
 
-Invalid examples:
+**Invalid examples:**
 
+```text
 my-project
 my project
 123project
+```
 
-Project names must use letters, numbers, and underscores and must not start with a number.
+Project names must contain only letters, numbers, and underscores, and must not start with a number.
 
----
+## 👨‍💻 Author
 
-👨‍💻 Author
+**Mohamed Ali Ismail Jami**
 
-Mohamed Ali Ismail Jami
+Creator and maintainer of `projectstarter-cli`.
 
-projectstarter-cli was created and is maintained by Mohamed Ali Ismail Jami.
+### Contact
 
-📞 Contact
+- **GitHub:** https://github.com/hamada-cool
+- **Repository:** https://github.com/hamada-cool/projectstarter
+- **Issues and bug reports:** https://github.com/hamada-cool/projectstarter/issues
+- **Email:** mohamedali32947@gmail.com
+- **Phone / WhatsApp:** +918341391506 / +249919532947
 
-For questions, suggestions, bug reports, or contributions, contact the project maintainer through GitHub.
+For bug reports, feature requests, or suggestions, you can open an issue in the GitHub repository.
 
-- GitHub: https://github.com/hamada-cool
-- Project Repository: https://github.com/hamada-cool/projectstarter
-- Bug Reports / Issues: https://github.com/hamada-cool/projectstarter/issues
-- Email: "mohamedali32947@gmail.com"
-- Phone / WhatsApp: "+918341391506" and "+249919532947"
+## 🤝 Contributing
 
-You can also open a GitHub Issue if you find a bug or have an idea for improving projectstarter-cli.
+Contributions, bug reports, suggestions, and improvements are welcome!
 
----
+### Contribution Workflow
 
-🤝 Contributing
+1. Fork the repository.
+2. Create a branch for your changes.
+3. Implement and test your changes.
+4. Run the test suite.
+5. Commit and push your changes.
+6. Open a pull request.
 
-Contributions, bug reports, suggestions, and improvements are welcome.
+Run the tests before submitting your changes:
 
-Before submitting changes:
-
-1. Create a branch for your change.
-2. Make your changes.
-3. Run the test suite.
-4. Make sure all tests pass.
-5. Open a pull request.
-
-Run tests with:
-
+```bash
 python -m pytest
+```
 
----
+## 📄 License
 
-📄 License
+`projectstarter-cli` is released under the MIT License.
 
-projectstarter-cli is licensed under the MIT License.
+See the [LICENSE](https://github.com/hamada-cool/projectstarter/blob/main/LICENSE) file for the full license text.
 
-See the "LICENSE" file for the complete license text.
+## 🎯 Project Status
 
----
-
-🎯 Project Status
-
-projectstarter-cli currently supports:
+Currently supported generators:
 
 - Python
 - Django
 - Flask
 - FastAPI
 
-The project is under active development, and more generators and features may be added in future releases.
+The project is under active development, and additional generators and features may be introduced in future releases.
 
-Latest Release: "v0.1.2" (https://github.com/hamada-cool/projectstarter/releases/tag/v0.1.2)
+**Latest release:** [v0.1.2](https://github.com/hamada-cool/projectstarter/releases/tag/v0.1.2)
 
----
+## ⭐ Support the Project
 
-⭐ Support the Project
+If you find `projectstarter-cli` useful, you can help support its development by:
 
-If you find projectstarter-cli useful, you can support the project by:
-
-- ⭐ Starring the GitHub repository
-- 🐛 Reporting bugs
-- 💡 Suggesting features
-- 🤝 Contributing code
-- 📢 Sharing the project with other developers
+- ⭐ Starring the [GitHub repository](https://github.com/hamada-cool/projectstarter).
+- 🐛 Reporting bugs.
+- 💡 Suggesting new features.
+- 🤝 Contributing code.
+- 📢 Sharing the project with other developers.
 
 ---
 
-projectstarter-cli — Start your next Python project faster. 🚀
+**projectstarter-cli — Start your next Python project faster. 🚀**
 
-Created by Mohamed Ali Ismail Jami.
+Created by **Mohamed Ali Ismail Jami**.

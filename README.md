@@ -27,17 +27,6 @@ It helps developers avoid manually creating folders, files, virtual environments
 
 ---
 
-🆕 What's New in v0.1.2
-
-- Added Python 3.13 support classifier.
-- Added GitHub Actions automated testing for Python 3.13 and 3.14.
-- Fixed virtual environment executable paths in generated projects.
-- Improved Django project generation.
-
-Release: "v0.1.2" (https://github.com/hamada-cool/projectstarter/releases/tag/v0.1.2)
-
----
-
 📋 Supported Project Types
 
 Project Type| Virtual Environment| Automatic Dependency Installation| Run Command
@@ -388,14 +377,9 @@ The test suite covers:
 - Interactive project creation
 - Doctor command
 
-Python Compatibility Testing
+GitHub Actions runs automated tests on Python 3.13 and 3.14.
 
-GitHub Actions automatically runs the test suite on:
-
-- Python 3.13
-- Python 3.14
-
-View the workflow: "GitHub Actions" (https://github.com/hamada-cool/projectstarter/actions/workflows/python-tests.yml).
+Workflow: https://github.com/hamada-cool/projectstarter/actions/workflows/python-tests.yml
 
 ---
 

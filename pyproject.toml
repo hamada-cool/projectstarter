@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "projectstarter-cli"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Python CLI tool for quickly generating Python, Django, Flask, and FastAPI projects"
 readme = "README.md"
 requires-python = ">=3.9"

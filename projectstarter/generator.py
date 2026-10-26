@@ -3,9 +3,14 @@ import subprocess
 import sys
 
 
+# ==============================
+# Utility Functions
+# ==============================
+
 def run_command(command, cwd=None):
-    """Run a command."""
-    subprocess.run(
+    """Run a shell command safely."""
+
+    return subprocess.run(
         command,
         cwd=cwd,
         check=True
@@ -13,8 +18,9 @@ def run_command(command, cwd=None):
 
 
 def create_virtual_environment(project_path):
-    """Create a virtual environment."""
+    """Create a cross-platform virtual environment."""
 
+    project_path = Path(project_path).resolve()
     venv_path = project_path / ".venv"
 
     print("Creating virtual environment...")
@@ -25,13 +31,23 @@ def create_virtual_environment(project_path):
     )
 
     if sys.platform == "win32":
-        return venv_path / "Scripts" / "python.exe"
+        python_exe = venv_path / "Scripts" / "python.exe"
+    else:
+        python_exe = venv_path / "bin" / "python"
 
-    return venv_path / "bin" / "python"
+    # Return an absolute path to avoid cwd-related issues.
+    python_exe = python_exe.resolve()
+
+    if not python_exe.exists():
+        raise FileNotFoundError(
+            f"Virtual environment Python not found: {python_exe}"
+        )
+
+    return python_exe
 
 
 def upgrade_pip(python_exe):
-    """Upgrade pip."""
+    """Upgrade pip inside the virtual environment."""
 
     print("Upgrading pip...")
 
@@ -48,7 +64,7 @@ def upgrade_pip(python_exe):
 
 
 def install_package(python_exe, package):
-    """Install a package."""
+    """Install a package inside the virtual environment."""
 
     print(f"Installing {package}...")
 
@@ -64,7 +80,9 @@ def install_package(python_exe, package):
 
 
 def save_requirements(python_exe, project_path):
-    """Create requirements.txt."""
+    """Generate requirements.txt using pip freeze."""
+
+    project_path = Path(project_path).resolve()
 
     result = subprocess.run(
         [
@@ -85,7 +103,7 @@ def save_requirements(python_exe, project_path):
 
 
 def create_gitignore(project_path, django=False):
-    """Create .gitignore."""
+    """Create a .gitignore file."""
 
     content = """__pycache__/
 *.py[cod]
@@ -107,6 +125,26 @@ venv/
         encoding="utf-8"
     )
 
+
+def activation_instructions():
+    """Return cross-platform virtual environment instructions."""
+
+    return """## Activate virtual environment
+
+Windows:
+
+.venv\\Scripts\\activate
+
+Linux / macOS:
+
+source .venv/bin/activate
+
+"""
+
+
+# ==============================
+# Python Project Generator
+# ==============================
 
 def create_python_project(project_name):
     """Create a basic Python project."""
@@ -160,11 +198,8 @@ if __name__ == "__main__":
         f"# {project_name}\n\n"
         "A Python project created with ProjectStarter.\n\n"
         "## Run\n\n"
-        "Activate the virtual environment on Windows:\n\n"
-        ".venv\\Scripts\\activate\n\n"
         "Run the application:\n\n"
-        "python src/"
-        f"{project_name}/main.py\n"
+        f"python src/{project_name}/main.py\n"
     )
 
     (project_path / "README.md").write_text(
@@ -176,6 +211,10 @@ if __name__ == "__main__":
         f"Project '{project_name}' created successfully!"
     )
 
+
+# ==============================
+# Django Project Generator
+# ==============================
 
 def create_django_project(project_name):
     """Create a Django project."""
@@ -213,7 +252,7 @@ def create_django_project(project_name):
             "config",
             "."
         ],
-        cwd=project_path
+        cwd=project_path.resolve()
     )
 
     save_requirements(
@@ -229,9 +268,7 @@ def create_django_project(project_name):
     readme = (
         f"# {project_name}\n\n"
         "A Django project created with ProjectStarter.\n\n"
-        "## Activate virtual environment\n\n"
-        "Windows:\n\n"
-        ".venv\\Scripts\\activate\n\n"
+        f"{activation_instructions()}"
         "## Run the project\n\n"
         "python manage.py runserver\n\n"
         "## Project URL\n\n"
@@ -248,6 +285,10 @@ def create_django_project(project_name):
         "created successfully!"
     )
 
+
+# ==============================
+# Flask Project Generator
+# ==============================
 
 def create_flask_project(project_name):
     """Create a Flask project."""
@@ -322,9 +363,7 @@ if __name__ == "__main__":
     readme = (
         f"# {project_name}\n\n"
         "A Flask project created with ProjectStarter.\n\n"
-        "## Activate virtual environment\n\n"
-        "Windows:\n\n"
-        ".venv\\Scripts\\activate\n\n"
+        f"{activation_instructions()}"
         "## Run the project\n\n"
         "python run.py\n\n"
         "## Project URL\n\n"
@@ -340,6 +379,11 @@ if __name__ == "__main__":
         f"Flask project '{project_name}' "
         "created successfully!"
     )
+
+
+# ==============================
+# FastAPI Project Generator
+# ==============================
 
 def create_fastapi_project(project_name):
     """Create a FastAPI project."""
@@ -405,9 +449,7 @@ def home():
     readme = (
         f"# {project_name}\n\n"
         "A FastAPI project created with ProjectStarter.\n\n"
-        "## Activate virtual environment\n\n"
-        "Windows:\n\n"
-        ".venv\\Scripts\\activate\n\n"
+        f"{activation_instructions()}"
         "## Run\n\n"
         "uvicorn app.main:app --reload\n\n"
         "## API\n\n"

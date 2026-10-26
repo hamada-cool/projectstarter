@@ -3,7 +3,6 @@ projectstarter-cli 🚀
 ""PyPI version" (https://img.shields.io/pypi/v/projectstarter-cli)" (https://pypi.org/project/projectstarter-cli/)
 ""Python Versions" (https://img.shields.io/pypi/pyversions/projectstarter-cli)" (https://pypi.org/project/projectstarter-cli/)
 ""Tests" (https://github.com/hamada-cool/projectstarter/actions/workflows/python-tests.yml/badge.svg)" (https://github.com/hamada-cool/projectstarter/actions/workflows/python-tests.yml)
-""License" (https://img.shields.io/github/license/hamada-cool/projectstarter)" (LICENSE)
 
 projectstarter-cli is a Python CLI tool created by Mohamed Ali Ismail Jami for quickly creating ready-to-use project structures.
 
@@ -25,9 +24,17 @@ It helps developers avoid manually creating folders, files, virtual environments
 - ℹ️ Show information about each project type
 - 🩺 Check the projectstarter-cli installation with "doctor"
 - 🧪 Includes automated tests
-- 🐍 Python 3.13 and 3.14 compatibility testing with GitHub Actions
-- 🔧 Improved virtual environment path handling
-- ⚙️ Automated testing through GitHub Actions
+
+---
+
+🆕 What's New in v0.1.2
+
+- Added Python 3.13 support classifier.
+- Added GitHub Actions automated testing for Python 3.13 and 3.14.
+- Fixed virtual environment executable paths in generated projects.
+- Improved Django project generation.
+
+Release: "v0.1.2" (https://github.com/hamada-cool/projectstarter/releases/tag/v0.1.2)
 
 ---
 
@@ -48,10 +55,6 @@ FastAPI| Yes| Yes| "uvicorn app.main:app --reload"
 Install projectstarter-cli from PyPI:
 
 pip install projectstarter-cli
-
-Upgrade to the latest version
-
-pip install --upgrade projectstarter-cli
 
 Check that it is installed:
 
@@ -387,21 +390,12 @@ The test suite covers:
 
 Python Compatibility Testing
 
-projectstarter-cli uses GitHub Actions to automatically test compatibility with:
+GitHub Actions automatically runs the test suite on:
 
 - Python 3.13
 - Python 3.14
 
-The workflow runs automated tests and checks the CLI commands, including:
-
-- "projectstarter --help"
-- "projectstarter list"
-- "projectstarter doctor"
-- Automated pytest tests
-
-Check the latest test results:
-
-"GitHub Actions – Python Compatibility Tests" (https://github.com/hamada-cool/projectstarter/actions/workflows/python-tests.yml)
+View the workflow: "GitHub Actions" (https://github.com/hamada-cool/projectstarter/actions/workflows/python-tests.yml).
 
 ---
 
@@ -410,6 +404,10 @@ Check the latest test results:
 The projectstarter-cli source code is organized as follows:
 
 projectstarter/
+├── .github/
+│   └── workflows/
+│       └── python-tests.yml
+│
 ├── projectstarter/
 │   ├── __init__.py
 │   ├── cli.py
@@ -427,10 +425,6 @@ projectstarter/
 │   ├── test_generator.py
 │   ├── test_registry.py
 │   └── test_utils.py
-│
-├── .github/
-│   └── workflows/
-│       └── python-tests.yml
 │
 ├── README.md
 ├── LICENSE
@@ -459,8 +453,6 @@ Contains the project generation logic for:
 
 It also handles virtual environment creation and dependency installation for supported frameworks.
 
-Virtual environment paths are resolved to absolute paths to support reliable project generation.
-
 "registry.py"
 
 Contains the registered project generators and project information.
@@ -476,10 +468,6 @@ Provides the "projectstarter doctor" diagnostic command.
 "tests/"
 
 Contains the automated test suite.
-
-".github/workflows/python-tests.yml"
-
-Contains the GitHub Actions workflow for testing Python compatibility.
 
 ---
 
@@ -575,9 +563,9 @@ projectstarter-cli currently supports:
 - Flask
 - FastAPI
 
-Latest Release: "v0.1.2" (https://github.com/hamada-cool/projectstarter/releases/tag/v0.1.2)
-
 The project is under active development, and more generators and features may be added in future releases.
+
+Latest Release: "v0.1.2" (https://github.com/hamada-cool/projectstarter/releases/tag/v0.1.2)
 
 ---
 
